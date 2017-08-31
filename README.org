@@ -1,0 +1,41 @@
+* ob-aql
+
+** header arguments
+
+- host
+- port
+- user
+- password
+- database
+- explain
+
+** examples
+:properties:
+:header-args: :user root :password root
+:end:
+
+*** insert
+
+: #+BEGIN_SRC aql
+: insert { name: "Katie Foster", age: 27 } into users
+: #+END_SRC
+: 
+: #+RESULTS:
+: : []
+
+*** query
+
+: #+BEGIN_SRC aql
+: for u in users return u
+: #+END_SRC
+: 
+: #+RESULTS:
+: : [
+: :   {
+: :     "_key": "465",
+: :     "_id": "users/465",
+: :     "_rev": "_VhgAxju---",
+: :     "name": "Katie Foster",
+: :     "age": 27
+: :   }
+: : ]
